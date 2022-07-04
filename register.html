@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="airline.css"> 
+
+</head>
+<body>
+
+	<script>
+		//alert('above function');
+		
+		function validate() {
+			//alert('welcome to java script');
+		
+			var userEmail=document.getElementById('myemail').value;
+			var userPassword=document.getElementById('mypassword').value;
+			var userDob=document.getElementById('mydob').value;
+			
+			var userState = document.getElementById('mystate').value;
+			var userAddress=document.getElementById('myaddress').value;
+			
+			
+			if(userEmail == "" ) {
+				document.getElementById("emailErrSpan").innerHTML="Email can not be blank";
+				return false;
+			}
+			
+			if(userPassword == "" ) {
+				document.getElementById("passErrSpan").innerHTML="Password can not be blank";
+				return false;
+			}
+			
+			if(userDob == "" ) {
+				document.getElementById("dobErrSpan").innerHTML="Birthdate can not be blank";
+				return false;
+			}
+			
+			
+			if(userState =="") {
+				document.getElementById("stateErrSpan").innerHTML="State can not be blank";
+				return false;
+			}
+			else {
+				if(userState =="MH") {
+					alert('Maharashtra is selected');
+					document.getElementById("citiMsg").innerHTML="Districts of Maharashtra";
+					//document.write('hello maharashtra');
+				}
+				else if(userState =="TN") {
+					//alert('Tamilnadu is selected');
+					document.getElementById("citiMsg").innerHTML="Districts of Maharashtra";
+
+				}
+				else if(userState =="GJ") {
+					//alert('Gujrat is selected');
+					document.getElementById("citiMsg").innerHTML="Districts of Gujrat";
+
+				}
+				else if(userState =="MP") {
+					//alert('Madhya Pradesh is selected');
+					document.getElementById("citiMsg").innerHTML="Districts of Madhya Pradesh";
+
+				}
+				else if(userState =="WB") {
+					//alert('West Bengal is selected');
+					document.getElementById("citiMsg").innerHTML="Districts of West Bengal";
+
+				}
+			}
+			
+			if(userAddress=="") {
+				document.getElementById("addrErrSpan").innerHTML="Address can not be blank";
+				return false;
+			}
+		
+			return true;
+		}
+		
+		function clearEmailError() {
+			document.getElementById("emailErrSpan").innerHTML="";
+
+		}
+		function clearPassError() {
+			document.getElementById("passErrSpan").innerHTML="";
+			
+		}
+		function clearDobError() {
+			document.getElementById("dobErrSpan").innerHTML="";
+
+		}
+		function clearAddressError() {
+			document.getElementById("addrErrSpan").innerHTML="";
+
+		}
+		
+		function clearStateError() {
+			document.getElementById("stateErrSpan").innerHTML="";
+
+		}
+		//alert('after function');
+		
+	</script>
+
+<h1> Welcome To My Airlines </h1>
+<hr>
+
+<form action="login.html">
+	<table border=5 cellspacing=10 cellpadding=10>	
+		<tr> 
+			<th> Register with us </th>
+		</tr>
+		
+		<tr>
+			<td>Enter Your Email Address</td> 
+			<td> <input type=text id="myemail" onkeyup="clearEmailError()"> <span id="emailErrSpan"></span> </td>
+		</tr>
+		
+		<tr>
+			<td> Enter Your Password </td>
+			<td> <input type=password id="mypassword" onkeyup="clearPassError()"> <span id="passErrSpan"></span> </td>
+		</tr>
+		
+		<tr>
+			<td>Enter Your Birthdate </td>
+			<td><input type=date id="mydob" onchange="clearDobError()"  onkeyup="clearDobError()"> <span id="dobErrSpan"></span></td>
+		</tr>
+		
+		<tr>
+			<td>Enter Your State </td>
+			<td><select id="mystate" onchange="clearStateError()">
+				<option value="">Select State</option>
+				<option value="MH">Maharashtra</option>
+				<option value="TN">Tamilnadu</option>
+				<option value="GJ">Gujrat</option>
+				<option value="MP">Madhya Pradesh</option>
+				<option value="WB">West Bengal</option>
+			</select><span id="stateErrSpan"></span>
+			</td>
+				
+ 		</tr>
+		<tr>
+			<td><span id="citiMsg">Enter cities </span></td>
+			<td><select id="myaddress" onchange="clearAddressError()">
+				<option value="">Select City</option>
+				<option value="mum">Mumbai</option>
+				<option value="pun">Pune</option>
+				<option value="maa">Chennai</option>
+				<option value="del">Delhi</option>
+				<option value="kol">Kolkatta</option>
+			</select><span id="addrErrSpan"></span>
+			</td>
+				
+ 		</tr>
+			
+			
+	
+	
+		<tr>
+			<td> <input type=submit value="Register Here" onclick="return validate()"> </td>
+			<td> Already a member ? <a href="login.html"> Login here </a> <br>
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+	Go Back To <a href="index.html"> Home </a> <br>
+
+
+</body>
+</html>

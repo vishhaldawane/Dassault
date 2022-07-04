@@ -1,0 +1,62 @@
+@charset "UTF-8";
+h1 {
+	background-color: BLUE;
+	color: white;
+	text-align: center;
+	
+}
+table {
+	background-color: lime;
+}
+
+body {
+	background-image: url('Airport2.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+tr {
+	color: blue;
+}
+/*
+ul {
+	list-style-type: none;
+	margin:0;
+	padding:0;	
+	width : 75px;
+	background-color: green;
+	height: 100%;
+	position:fixed;
+	overflow: auto;
+}
+
+li a {
+	display: block;
+	color: white;
+	padding : 8px 16px;
+	text-decoration: none;
+}
+li a:hover {
+	background-color: red;	
+}
+*/
+
+ul {
+	list-style-type: none;
+	margin:0;
+	padding:0;	
+	background-color: green;
+	overflow:hidden;
+}
+li {
+	float:left;
+}
+
+li a {
+	display: block;
+	color: white;
+	padding : 8px 16px;
+	text-decoration: none;
+}
+li a:hover {
+	background-color: red;	
+}

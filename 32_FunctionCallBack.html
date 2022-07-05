@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <p>Before the script...</p>
+
+  <script>
+	function ask(question, ok, cancel) 
+	{
+	  if (confirm(question))  // ok and cancel button 
+		ok(); //this is a call back the agree/sure/confirm
+	 else 
+		cancel(); //this is a call back disagree/notsure/notconfirm
+	}
+	/*function agree() 	{ 
+		alert( "You agreed." );
+	}
+	function disagree() {
+	  alert( "You canceled the execution." );
+	}*/
+	// usage: functions showOk, showCancel are passed as arguments to ask
+	ask("Do you agree?", 
+				function agree() 	{ 
+					alert( "You agreed." );
+				}, 
+				function disagree() {
+	 			 alert( "You canceled the execution." );
+				}
+	); 9833279068
+	ask("Are you Sure?", 
+			function sure() 	{ 
+				alert( "You are sure." );
+			}, 
+			function notsure() {
+		 		alert( "You were not sure about the execution." );
+			}
+	);
+	
+	ask("Confirm to delete?", 
+			function confirmed() 	{ 
+				alert( "You are confirmed about the deletion" );
+			}, 
+			function notconfirmed() {
+		 		alert( "You are not confirmed about deletion" );
+			}		
+	);
+	/*The arguments showOk and showCancel of ask are called 
+	callback functions or just callbacks.
+	The idea is that we pass a function 
+	and expect it to be �called back� 
+	later if necessary. 
+
+	In our case, showOk becomes the 
+	callback for �yes� answer, 
+	and showCancel for �no� answer.
+	*/
+
+  </script>
+
+  <p>...After the script.</p>
+
+</body>
+
+</html>
